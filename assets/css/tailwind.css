@@ -1,0 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+	font-family: 'Akzidenz-Grotesk-Light';
+	src: url('/fonts/akzidenzgrotesk-light-webfont.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Akzidenz-Grotesk';
+	src: url('/fonts/akzidenzgrotesk-regular-webfont.ttf') format('truetype');
+	
+}
+
+@font-face {
+	font-family: 'Akzidenz-Grotesk-Medium';
+	src: url('/fonts/akzidenzgrotesk-medium-webfont.ttf') format('truetype');
+	
+}
+
+@font-face {
+	font-family: 'Akzidenz-Grotesk-Bold';
+	src: url('/fonts/akzidenzgrotesk-bold-webfont.ttf') format('truetype');
+	
+}
+
+
+body{
+    @apply bg-gfinity-grey
+}
+
+html {
+    font-family: 'Akzidenz-Grotesk', sans-serif;
+    font-size: 16px;
+    word-spacing: 1px;
+    letter-spacing: -0.5px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
