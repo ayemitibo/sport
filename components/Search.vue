@@ -2,7 +2,13 @@
 	<div>
 		<div class="main z-10 absolute">
 			<div class="bordered">
-				<img src="@/assets/images/arrow-left.svg" alt="" srcset="" />
+				<router-link to="/">
+					<img
+						src="@/assets/images/arrow-left.svg"
+						alt=""
+						srcset=""
+					/>
+				</router-link>
 			</div>
 			<div class="ml-4">
 				<p class="main__title">Matchmaking Lobby</p>
@@ -37,12 +43,12 @@
 		</div>
 		<div class="overlay bg-gfinity-blue">
 			<div class="notifications">
-				<div class="toast-wrapper">
+				<div class="toast-wrapper bg-dark-grey">
 					<span data-v-0c939f8a="" class="callout-small-bold w-2/3">
 						Searching...
 					</span>
 					<span class="flex justify-between items-center w-1/3"
-						><span class="callout-small">{{ timerCount }}</span>
+						><span class="callout-small">{{ getTime }}</span>
 						<button>
 							<svg
 								width="14"
@@ -74,5 +80,10 @@
 <script>
 export default {
 	props: ['timerCount'],
+	computed: {
+		getTime() {
+			return this.$utils.formatToDate(this.timerCount)
+		},
+	},
 }
 </script>

@@ -1,5 +1,9 @@
 <template>
-	<span class="flex flex-col">
+	<span
+		class="flex flex-col cursor-pointer flyup"
+		:class="{ expanded: isExpanded }"
+		@click="isExpanded = !isExpanded"
+	>
 		<span
 			class="
 				flex
@@ -25,18 +29,34 @@
 					class="h-auto"
 				/>
 			</span>
+			<div v-if="isExpanded">
+				<p></p>
+			</div>
 		</span>
 	</span>
 </template>
 <script>
 export default {
 	props: ['label', 'type'],
+	data() {
+		return {
+			isExpanded: false,
+		}
+	},
 }
 </script>
 <style scoped>
+.flyup {
+	max-height: 49px;
+	transition: max-height 500ms;
+}
 .flyup__title {
 	font-size: 14px;
 	line-height: 16px;
 	@apply w-1/3;
+}
+
+.expanded {
+	@apply max-h-screen;
 }
 </style>

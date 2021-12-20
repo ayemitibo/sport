@@ -5,7 +5,7 @@
 			image-src="fifa19-ronaldo-fg-large.png"
 		>
 		</nav-image>
-		<transition name="fade" mode="out-in" appear>
+		<transition name="slide-fade" mode="out-in" appear>
 			<component :is="componentName" :timer-count="timerCount" />
 		</transition>
 	</div>
@@ -23,7 +23,7 @@ export default {
 	},
 	data() {
 		return {
-			timerCount: 10,
+			timerCount: 102,
 			show: true,
 			componentName: 'Search',
 		}
@@ -127,8 +127,6 @@ export default {
 	padding-right: 24px;
 	padding-left: 24px;
 	border-radius: 0;
-	--tw-bg-opacity: 1;
-	background-color: rgba(27, 27, 27, var(--tw-bg-opacity));
 }
 
 .notifications {
@@ -138,13 +136,13 @@ export default {
 	z-index: 50;
 	transform: translate(0px, 0px);
 }
-.fade-enter-active {
+.slide-fade-enter-active {
 	transition: all 0.3s ease;
 }
-.fade-leave-active {
+.slide-fade-leave-active {
 	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fade-enter.fade-leave-to
+.slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
 	opacity: 0;
 }

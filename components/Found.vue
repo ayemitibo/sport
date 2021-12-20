@@ -37,12 +37,12 @@
 		</div>
 		<div class="overlay bg-dark-grey">
 			<div class="notifications">
-				<div class="toast-wrapper">
+				<div class="toast-wrapper bg-gfinity-blue">
 					<span data-v-0c939f8a="" class="callout-small-bold w-2/3">
 						Searching...
 					</span>
 					<span class="flex justify-between items-center w-1/3"
-						><span class="callout-small">{{ timerCount }}</span>
+						><span class="callout-small">{{ '-00:17' }}</span>
 						<button>
 							<svg
 								width="14"
