@@ -5,110 +5,27 @@
 			image-src="fifa19-ronaldo-fg-large.png"
 		>
 		</nav-image>
-		<transition name="component-fade">
-			<div>
-				<div class="main z-10 absolute">
-					<div class="bordered">
-						<img
-							src="@/assets/images/arrow-left.svg"
-							alt=""
-							srcset=""
-						/>
-					</div>
-					<div class="ml-4">
-						<p class="main__title">Matchmaking Lobby</p>
-						<h1 class="main__header">
-							Searching for compatible opponents
-						</h1>
-						<p class="mt-6 font-akzidenz-light main__search">
-							We're searching our database of players to pair you
-							with an opponent of similar skill
-						</p>
-						<section class="relative mt-16 z-10">
-							<div class="flex items-center">
-								<span
-									class="
-										footnote
-										flex-shrink-0
-										w-1/5
-										text-white
-									"
-									>Lobby</span
-								>
-								<div class="avatar ml-1">
-									<img
-										src="@/assets/images/avatar_01.png"
-										class="object-cover rounded-full img"
-									/>
-								</div>
-							</div>
-							<div class="flex items-center mt-10">
-								<div class="w-1/5 flex-shrink-0">
-									<div class="bg-white rect"></div>
-								</div>
-								<span class="footnote"
-									><span class="font-bold">4,021</span>
-									<span>in Queue</span></span
-								>
-							</div>
-						</section>
-					</div>
-				</div>
-				<div class="overlay">
-					<div class="notifications">
-						<div class="toast-wrapper">
-							<span
-								data-v-0c939f8a=""
-								class="callout-small-bold w-2/3"
-							>
-								Searching...
-							</span>
-							<span
-								class="flex justify-between items-center w-1/3"
-								><span class="callout-small">{{
-									timerCount
-								}}</span>
-								<button>
-									<svg
-										width="14"
-										height="14"
-										viewBox="0 0 16 16"
-										fill="currentColor"
-										xmlns="http://www.w3.org/2000/svg"
-										class=""
-									>
-										<rect
-											x="2.34314"
-											y="0.727051"
-											width="18.2857"
-											height="2.28571"
-											transform="rotate(45 2.34314 0.727051)"
-										></rect>
-										<rect
-											width="18.2857"
-											height="2.28571"
-											transform="matrix(-0.707107 0.707107 0.707107 0.707107 13.6569 0.727051)"
-										></rect>
-									</svg></button
-							></span>
-						</div>
-					</div>
-				</div>
-			</div>
+		<transition name="fade" mode="out-in" appear>
+			<component :is="componentName" :timer-count="timerCount" />
 		</transition>
 	</div>
 </template>
 <script>
 import NavImage from '~/components/NavImage.vue'
+import Search from '~/components/Search.vue'
+import Found from '~/components/Found.vue'
 
 export default {
 	components: {
 		NavImage,
+		Search,
+		Found,
 	},
 	data() {
 		return {
-			timerCount: 30,
-			isSearching: true,
+			timerCount: 10,
+			show: true,
+			componentName: 'Search',
 		}
 	},
 	watch: {
@@ -118,6 +35,8 @@ export default {
 					setTimeout(() => {
 						this.timerCount--
 					}, 1000)
+				} else {
+					this.componentName = 'Found'
 				}
 			},
 			immediate: true, // This ensures the watcher is triggered upon creation
@@ -125,7 +44,7 @@ export default {
 	},
 }
 </script>
-<style lang="postcss" scoped>
+<style lang="postcss">
 .main {
 	font-weight: bolder;
 	width: 351px;
@@ -133,7 +52,6 @@ export default {
 	color: white;
 }
 .overlay {
-	background-color: #293894;
 	mix-blend-mode: multiply;
 	width: 351px;
 	height: 637px;
@@ -220,22 +138,14 @@ export default {
 	z-index: 50;
 	transform: translate(0px, 0px);
 }
-
-.fade-enter-active,
+.fade-enter-active {
+	transition: all 0.3s ease;
+}
 .fade-leave-active {
-	transition: opacity 1s;
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter.fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
 	opacity: 0;
-}
-.component-fade-enter-active,
-.component-fade-leave-active {
-	transition: all 0.2s linear !important;
-}
-
-.component-fade-enter,
-.component-fade-leave-to {
-	height: auto;
-	transform: translateX(100%);
 }
 </style>
