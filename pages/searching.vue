@@ -1,65 +1,99 @@
 <template>
-	<div class="relative mt-4">
+	<div class="relative">
 		<nav-image
-			class="absolute top-0 right-0 z-0"
+			class="absolute top-upper right-0 z-0"
 			image-src="fifa19-ronaldo-fg-large.png"
 		>
 		</nav-image>
-		<div style="height: 650px" class="bg-gfinity-blue"></div>
+		<div class="bg-gfinity-blue main">
+			<div class="bordered"></div>
+			<div class="ml-4">
+				<p class="main__title">Matchmaking Lobby</p>
+				<h1 class="main__header">Searching for compatible opponents</h1>
+				<p class="mt-6 font-akzidenz-light main__search">
+					We’re searching our database of players to pair you with an
+					opponent of similar skill
+				</p>
+				<section class="relative mt-16 z-10">
+					<div class="flex items-center">
+						<span class="footnote flex-shrink-0 w-1/5">Lobby</span>
+						<div class="avatar ml-1">
+							<img
+								src="@/assets/images/avatar_01.png"
+								width="46"
+								height="46"
+								class="object-cover rounded-full"
+							/>
+						</div>
+					</div>
+					<div class="flex items-start mt-10">
+						<div class="w-1/5 flex-shrink-0">
+							<div class="bg-white"></div>
+						</div>
+						<span class="footnote"
+							><span class="font-bold">4,021</span>
+							<span>in Queue</span></span
+						>
+					</div>
+				</section>
+			</div>
+		</div>
 	</div>
 </template>
 <script>
 import NavImage from '~/components/NavImage.vue'
-import UserCard from '~/components/UserCard.vue'
-import FlyUp from '~/components/FlyUp.vue'
-import Footer from '~/components/Footer.vue'
 
 export default {
 	components: {
 		NavImage,
-		// UserCard,
-		// FlyUp,
-		// Footer,
 	},
 }
 </script>
-<style lang="scss">
+<style lang="postcss" scoped>
+.main {
+	mix-blend-mode: multiply;
+	width: 351px;
+	height: 637px;
+}
 .bordered {
-	border: 1px solid #cfd1c7;
+	height: 105px;
+	width: 105px;
+	@apply bg-dark-grey;
+}
+
+.top-upper {
+	top: -25px;
 }
 .main__title {
-	font-size: 36px;
+	margin-top: 42px;
+	font-size: 16px;
+	line-height: 19px;
+	@apply font-akzidenz-bold text-white;
+}
+.main__header {
+	font-size: 48px;
 	line-height: 44px;
-	letter-spacing: -2px;
-	margin-right: 14px;
-	@apply text-dark-grey font-akzidenz-bold;
+	letter-spacing: -3px;
+	@apply font-akzidenz-bold text-white mt-6;
 }
-
-.fifa-chip {
-	padding: 1px 5px;
-	letter-spacing: 1.5px;
-	font-size: 10px;
-	@apply font-akzidenz-bold rounded-r-full
-						bg-dark-grey text-white;
+.main__search {
+	font-size: 18px;
+	line-height: 22px;
+	letter-spacing: -0.75px;
+	@apply text-white;
 }
-
-.bordered-image {
-	border: 1px solid #cfd1c7;
-	border-radius: 6px;
-	@apply w-full h-full;
+.footnote {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	letter-spacing: 0;
+	line-height: 1.167;
 }
-
-.main__chip {
-	padding: 3px 5px 2px 5px;
-	font-size: 10px;
-	line-height: 12px;
-	letter-spacing: 1.5px;
-	@apply uppercase font-akzidenz-bold;
-}
-
-.points {
-	font-size: 11px;
-	line-height: 13px;
-	@apply font-akzidenz-bold;
+.avatar {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
 }
 </style>
