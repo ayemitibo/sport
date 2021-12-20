@@ -16,19 +16,19 @@
 				</p>
 				<section class="relative mt-16 z-10">
 					<div class="flex items-center">
-						<span class="footnote flex-shrink-0 w-1/5">Lobby</span>
+						<span class="footnote flex-shrink-0 w-1/5 text-white"
+							>Lobby</span
+						>
 						<div class="avatar ml-1">
 							<img
 								src="@/assets/images/avatar_01.png"
-								width="46"
-								height="46"
-								class="object-cover rounded-full"
+								class="object-cover rounded-full img"
 							/>
 						</div>
 					</div>
-					<div class="flex items-start mt-10">
+					<div class="flex items-center mt-10">
 						<div class="w-1/5 flex-shrink-0">
-							<div class="bg-white"></div>
+							<div class="bg-white rect"></div>
 						</div>
 						<span class="footnote"
 							><span class="font-bold">4,021</span>
@@ -87,6 +87,7 @@ export default {
 	line-height: 1rem;
 	letter-spacing: 0;
 	line-height: 1.167;
+	@apply text-white;
 }
 .avatar {
 	position: relative;
@@ -95,5 +96,21 @@ export default {
 	justify-content: center;
 	width: 46px;
 	height: 46px;
+
+	&::after {
+		@apply absolute border-2 rounded-full z-10;
+		content: '';
+		width: 120%;
+		height: 120%;
+	}
+}
+.img {
+	height: 46px;
+	width: 46px;
+}
+
+.rect {
+	width: 12px;
+	height: 2px;
 }
 </style>
