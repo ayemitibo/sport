@@ -1,0 +1,21 @@
+<svg
+							width="14"
+							height="14"
+							viewBox="0 0 16 16"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							class=""
+						>
+							<rect
+								x="2.34314"
+								y="0.727051"
+								width="18.2857"
+								height="2.28571"
+								transform="rotate(45 2.34314 0.727051)"
+							></rect>
+							<rect
+								width="18.2857"
+								height="2.28571"
+								transform="matrix(-0.707107 0.707107 0.707107 0.707107 13.6569 0.727051)"
+							></rect>
+						</svg>
