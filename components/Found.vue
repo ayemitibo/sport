@@ -1,11 +1,17 @@
 <template>
 	<div>
-		<div class="main z-10 absolute">
-			<div class="bordered">
-				<img src="@/assets/images/arrow-left.svg" alt="" srcset="" />
+		<div class="main-search z-10 absolute">
+			<div class="bordered-box">
+				<img
+					src="@/assets/images/arrow-left.svg"
+					alt=""
+					srcset=""
+					class="cursor-pointer"
+					@click="goBack"
+				/>
 			</div>
 			<div class="ml-4">
-				<p class="main__title">Matchmaking Lobby</p>
+				<p class="main__search-title">Matchmaking Lobby</p>
 				<h1 class="main__header">A match has been found for you!</h1>
 				<p class="mt-6 font-akzidenz-light main__search">
 					We’ve found a compatible opponent for you to play Squad
@@ -75,5 +81,10 @@
 <script>
 export default {
 	props: ['timerCount'],
+	methods: {
+		goBack() {
+			this.$router.push('/')
+		},
+	},
 }
 </script>

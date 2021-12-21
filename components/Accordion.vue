@@ -18,7 +18,7 @@
 			</span>
 			<span class="flex items-center pr-2 w-1/3">
 				<span class="font-akzidenz-light">
-					{{ type }}
+					{{ getSelected }}
 				</span>
 			</span>
 			<span class="w-1/3 flex flex-wrap justify-end">
@@ -29,26 +29,48 @@
 					class="h-auto"
 				/>
 			</span>
-			<div v-if="isExpanded">
-				<p></p>
-			</div>
 		</span>
+		<div class="w-full">
+			<span class="flex flex-col w-1/3 self-end">
+				<span
+					v-for="(value, index) in options"
+					:key="index"
+					:style="{
+						marginBottom: !isExpanded ? '-44px' : null,
+						opacity: !isExpanded ? 0 : 1,
+					}"
+					class="font-akzidenz-light"
+					@click="select(value)"
+				>
+					{{ value }}
+				</span>
+			</span>
+		</div>
 	</span>
 </template>
 <script>
 export default {
-	props: ['label', 'type'],
+	props: ['label', 'options', 'value'],
 	data() {
 		return {
 			isExpanded: false,
 		}
+	},
+	computed: {
+		getSelected() {
+			return this.options.find((option) => option === this.value)
+		},
+	},
+	methods: {
+		select(value) {
+			this.$emit('input', value)
+		},
 	},
 }
 </script>
 <style scoped>
 .flyup {
 	max-height: 49px;
-	transition: max-height 500ms;
 }
 .flyup__title {
 	font-size: 14px;

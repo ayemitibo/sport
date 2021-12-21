@@ -45,7 +45,7 @@ export default {
 }
 </script>
 <style lang="postcss">
-.main {
+.main-search {
 	font-weight: bolder;
 	width: 351px;
 	height: 637px;
@@ -59,7 +59,7 @@ export default {
 	top: 0;
 }
 
-.bordered {
+.bordered-box {
 	height: 105px;
 	width: 105px;
 	@apply bg-dark-grey flex justify-center items-center;
@@ -68,7 +68,7 @@ export default {
 .top-upper {
 	top: -25px;
 }
-.main__title {
+.main__search-title {
 	margin-top: 42px;
 	font-size: 16px;
 	line-height: 19px;

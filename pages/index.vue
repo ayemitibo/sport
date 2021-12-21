@@ -75,16 +75,21 @@
 				>
 			</div>
 			<div class="mt-8">
-				<fly-up
-					v-for="({ label, type }, index) in [
-						{ label: 'Type', type: 'Competitive' },
-						{ label: 'Gamemode', type: 'Squad Battles' },
-						{ label: 'Lobby Status', type: 'Invite Only' },
-					]"
-					:key="index"
-					:label="label"
-					:type="type"
-				></fly-up>
+				<accordion
+					v-model="type"
+					:label="'Type'"
+					:options="['Competitive']"
+				></accordion>
+				<accordion
+					v-model="mode"
+					:label="'Gamemode'"
+					:options="['Squad Battles', 'Battles', 'Squad']"
+				></accordion>
+				<accordion
+					v-model="status"
+					:label="'Lobby Status'"
+					:options="['Invite Only']"
+				></accordion>
 			</div>
 		</main>
 		<Footer></Footer>
@@ -93,15 +98,22 @@
 <script>
 import NavImage from '~/components/NavImage.vue'
 import UserCard from '~/components/UserCard.vue'
-import FlyUp from '~/components/FlyUp.vue'
 import Footer from '~/components/Footer.vue'
+import Accordion from '~/components/Accordion.vue'
 
 export default {
 	components: {
 		NavImage,
 		UserCard,
-		FlyUp,
 		Footer,
+		Accordion,
+	},
+	data() {
+		return {
+			type: 'Competitive',
+			mode: 'Squad Battles',
+			status: 'Invite Only',
+		}
 	},
 }
 </script>

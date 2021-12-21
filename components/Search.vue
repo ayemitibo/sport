@@ -1,17 +1,17 @@
 <template>
 	<div>
-		<div class="main z-10 absolute">
-			<div class="bordered">
-				<router-link to="/">
-					<img
-						src="@/assets/images/arrow-left.svg"
-						alt=""
-						srcset=""
-					/>
-				</router-link>
+		<div class="main-search z-10 absolute">
+			<div class="bordered-box">
+				<img
+					src="@/assets/images/arrow-left.svg"
+					alt=""
+					srcset=""
+					class="cursor-pointer"
+					@click="goBack"
+				/>
 			</div>
 			<div class="ml-4">
-				<p class="main__title">Matchmaking Lobby</p>
+				<p class="main__search-title">Matchmaking Lobby</p>
 				<h1 class="main__header">Searching for compatible opponents</h1>
 				<p class="mt-6 font-akzidenz-light main__search">
 					We're searching our database of players to pair you with an
@@ -83,6 +83,11 @@ export default {
 	computed: {
 		getTime() {
 			return this.$utils.formatToDate(this.timerCount)
+		},
+	},
+	methods: {
+		goBack() {
+			this.$router.push('/')
 		},
 	},
 }
