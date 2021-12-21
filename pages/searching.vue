@@ -1,5 +1,5 @@
 <template>
-	<div class="relative">
+	<div class="relative" style="height: calc(100vh - 105px)">
 		<nav-image
 			class="absolute top-upper right-0 z-0"
 			image-src="fifa19-ronaldo-fg-large.png"
@@ -131,8 +131,8 @@ export default {
 
 .notifications {
 	position: absolute;
-	bottom: -2.25rem;
-	right: -24px;
+	bottom: 10px;
+	right: 0;
 	z-index: 50;
 	transform: translate(0px, 0px);
 }

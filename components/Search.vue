@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="relative h-full">
 		<div class="main-search z-10 absolute">
 			<div class="bordered-box">
 				<img
@@ -41,38 +41,36 @@
 				</section>
 			</div>
 		</div>
-		<div class="overlay bg-gfinity-blue">
-			<div class="notifications">
-				<div class="toast-wrapper bg-dark-grey">
-					<span data-v-0c939f8a="" class="callout-small-bold w-2/3">
-						Searching...
-					</span>
-					<span class="flex justify-between items-center w-1/3"
-						><span class="callout-small">{{ getTime }}</span>
-						<button>
-							<svg
-								width="14"
-								height="14"
-								viewBox="0 0 16 16"
-								fill="currentColor"
-								xmlns="http://www.w3.org/2000/svg"
-								class=""
-							>
-								<rect
-									x="2.34314"
-									y="0.727051"
-									width="18.2857"
-									height="2.28571"
-									transform="rotate(45 2.34314 0.727051)"
-								></rect>
-								<rect
-									width="18.2857"
-									height="2.28571"
-									transform="matrix(-0.707107 0.707107 0.707107 0.707107 13.6569 0.727051)"
-								></rect>
-							</svg></button
-					></span>
-				</div>
+		<div class="overlay bg-gfinity-blue"></div>
+		<div class="notifications">
+			<div class="toast-wrapper bg-dark-grey">
+				<span data-v-0c939f8a="" class="callout-small-bold w-2/3">
+					Searching...
+				</span>
+				<span class="flex justify-between items-center w-1/3"
+					><span class="callout-small">{{ getTime }}</span>
+					<nuxt-link to="/">
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 16 16"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+							class=""
+						>
+							<rect
+								x="2.34314"
+								y="0.727051"
+								width="18.2857"
+								height="2.28571"
+								transform="rotate(45 2.34314 0.727051)"
+							></rect>
+							<rect
+								width="18.2857"
+								height="2.28571"
+								transform="matrix(-0.707107 0.707107 0.707107 0.707107 13.6569 0.727051)"
+							></rect></svg></nuxt-link
+				></span>
 			</div>
 		</div>
 	</div>
