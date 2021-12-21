@@ -10,7 +10,9 @@ Node version :- 14.0
 
 # Todo
 
-Change Transition and also write more tests both end to end(cypress) and units test
+Change Transition and also write more units test
+
+Use Tailwind jit mode
 
 
 
