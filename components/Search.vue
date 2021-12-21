@@ -49,7 +49,7 @@
 				</span>
 				<span class="flex justify-between items-center w-1/3"
 					><span class="callout-small">{{ getTime }}</span>
-					<nuxt-link to="/">
+					<nuxt-link id="cancel" to="/">
 						<svg
 							width="14"
 							height="14"
