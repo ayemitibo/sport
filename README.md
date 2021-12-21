@@ -1,3 +1,19 @@
+# Review Instruction
+
+Node version :- 14.0
+
+```bash
+   $ git clone https://github.com/ayemitibo/sport.git
+
+   $ npm run dev
+```
+
+# Todo
+
+Change Transition and also write more tests both end to end(cypress) and units test
+
+
+
 # Gfinity Front-end Assignment
 
 Thank you for your time thus far interviewing with us. We've created this assignment to resemble something we work on routinely.
